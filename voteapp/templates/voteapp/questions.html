@@ -1,0 +1,26 @@
+{% extends 'voteapp/base.html'%}
+{%load static%}
+{% block base%}
+
+<div class="container">
+  <br><br>
+  <h1>  Poll Questions</h1><br>
+
+  {% for question in questions%}
+  <div class="card">
+      <div class="card-body">
+          <h3>{{question.question}}</h3><br>
+          <a href="{% url 'detail_question' question.id %}" class='btn btn-primary btn-sm '>Vote Now</a>
+          <a href="{%url  'results' question.id %}" class='btn btn-warning btn-sm '>Results</a>
+
+        </div>
+
+  </div>
+
+</div>
+
+
+{% endfor%}
+
+
+{% endblock%}

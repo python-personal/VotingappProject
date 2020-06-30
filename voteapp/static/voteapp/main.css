@@ -1,0 +1,25 @@
+.navbar{
+  background-color: #007bff;
+  color:white;
+}
+.center,h1{
+  text-align: center;
+}
+.ahref{
+  margin-left:35%;
+}
+h4{
+  margin-left:200px;
+  padding:10px;
+}
+
+.card{
+  width:750px;
+  margin:20px auto;
+}
+
+.btn{
+  color:white;
+  font-size: 18px;
+
+}

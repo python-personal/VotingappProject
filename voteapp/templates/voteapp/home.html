@@ -1,0 +1,13 @@
+{% extends 'voteapp/base.html'%}
+{%load static%}
+{% block base%}
+<div class="card">
+    <div class="card-body">
+      <h1 class='center'>Welcome To Voting App</h1>
+      <p class='center'>Please Vote of your choice</p>
+      <a href="{% url 'question'%}" class='btn btn-primary btn-lg ahref'>View Available Polls</a>
+</div>
+
+
+  </div>
+{% endblock%}

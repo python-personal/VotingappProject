@@ -1,0 +1,37 @@
+{% extends 'voteapp/base.html'%}
+{%load static%}
+{% block base%}
+
+<div class="container">
+
+  <div class="card">
+      <div class="card-body">
+          <h3>{{question.question}}</h3><br>
+
+          <form action="{%url  'vote' question.id %}" method="POST">
+          	{% csrf_token %}
+          	{% for choice in question.choice_set.all %}
+          		<div class="form-check">
+          			<input
+          				type="radio"
+          				name="choice"
+          				class="form-check-input"
+          				id="choice{{ forloop.counter }}"
+          				value="{{ choice.id }}"
+          			/>
+          			<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+          		</div>
+          	{% endfor %}
+          	<input type="submit" value="vote" class="btn btn-success btn-lg btn-block mt-4" />
+          </form>
+        </div>
+
+  </div>
+  <a href="{%url 'question' %}" class='btn btn-primary btn-lg ahref' >Back to polls</a>
+
+</div>
+
+
+
+
+{% endblock%}
